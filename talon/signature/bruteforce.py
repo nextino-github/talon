@@ -16,9 +16,9 @@ RE_SIGNATURE = re.compile(r'''
                    (?:
                        ^[\s]*--*[\s]*[a-z \.]*$
                        |
-                       ^thanks[\s,!]*$
+                       ^(?:thanks|thx|thank you)[\s,!]*$
                        |
-                       ^regards[\s,!]*$
+                       ^(?:(?:thanks|thx|thank you) (?:and|&) )?regards[\s,!]*$
                        |
                        ^cheers[\s,!]*$
                        |
