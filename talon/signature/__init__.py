@@ -31,9 +31,7 @@ from . learning import classifier
 DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 EXTRACTOR_FILENAME = os.path.join(DATA_DIR, 'classifier')
-EXTRACTOR_DATA = os.path.join(DATA_DIR, 'train.data')
 
 
 def initialize():
-    extraction.EXTRACTOR = classifier.load(EXTRACTOR_FILENAME,
-                                           EXTRACTOR_DATA)
+    extraction.EXTRACTOR = classifier.load(EXTRACTOR_FILENAME)
