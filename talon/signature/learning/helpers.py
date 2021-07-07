@@ -18,7 +18,7 @@ from talon.signature.constants import SIGNATURE_MAX_LINES
 rc = re.compile
 
 RE_EMAIL = rc('\S@\S')
-RE_RELAX_PHONE = rc('(\(? ?[\d]{2,3} ?\)?.{,3}?){2,}')
+RE_RELAX_PHONE = rc('((\(? ?[\d]{2,3} ?\)?.{,3}?){2,}|/PHONE_.*?/)')
 RE_URL = rc(r'''https?://|www\.[\S]+\.[\S]''')
 
 # Taken from:
@@ -39,7 +39,7 @@ RE_SIGNATURE_WORDS = rc(('(T|t)hank.*,|(B|b)est|(R|r)egards|'
 # Taken from:
 # http://www.cs.cmu.edu/~vitor/papers/sigFilePaper_finalversion.pdf
 # Line contains a pattern like Vitor R. Carvalho or William W. Cohen.
-RE_NAME = rc('[A-Z][a-z]+\s\s?[A-Z][\.]?\s\s?[A-Z][a-z]+')
+RE_NAME = rc('([A-Z][a-z]+\s\s?[A-Z][\.]?\s\s?[A-Z][a-z]+|/(FIRST|LAST|USER)_NAME.*?/)')
 
 INVALID_WORD_START = rc('\(|\+|[\d]')
 
