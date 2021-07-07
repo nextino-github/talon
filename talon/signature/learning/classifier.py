@@ -28,7 +28,7 @@ def train(classifier, train_data_filename, save_classifier_filename=None):
     return classifier
 
 
-def load(saved_classifier_filename, train_data_filename):
+def load(saved_classifier_filename):
     """Loads saved classifier. """
     try:
         return joblib.load(saved_classifier_filename)
