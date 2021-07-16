@@ -19,6 +19,7 @@ rc = re.compile
 
 RE_EMAIL = rc('(\S@\S|/EMAIL_(PRO|PERSO).*?/)')
 RE_RELAX_PHONE = rc('((\(? ?[\d]{2,3} ?\)?.{,3}?){2,}|/PHONE_.*?/)')
+RE_USA_PHONE = rc('/PHONE_UNITED_STATES_OF.*?/')
 RE_URL = rc(r'''https?://|www\.[\S]+\.[\S]''')
 
 # Taken from:
@@ -215,7 +216,9 @@ def has_signature(body, sender):
     for line in candidate:
         # we check lines for sender's name, phone, email and url,
         # those signature lines don't take more then 27 lines
-        if len(line.strip()) > 27:
+        if (binary_regex_search(RE_USA_PHONE)(line)):
+            upvotes+=1
+        elif len(line.strip()) > 30:
             continue
         elif contains_sender_names(sender)(line):
             return True
