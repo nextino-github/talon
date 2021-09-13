@@ -56,6 +56,7 @@ setup(name='talon',
           "six>=1.10.0",
           "html5lib",
           "joblib",
+          "setuptools-scm>=6.3.2"
           ],
       tests_require=[
           "mock",
