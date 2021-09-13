@@ -28,9 +28,12 @@ class InstallCommand(install):
             for not_required in ["numpy", "scipy", "scikit-learn==0.24.1"]:
                 dist.install_requires.remove(not_required)
 
-    def extract_version():
-        from setuptools_scm import get_version
-        return re.sub(r'\.[a-z]+.*$', '', get_version(root=os.path.dirname(__file__), relative_to=__file__, version_scheme='python-simplified-semver', local_scheme='no-local-version'))
+def extract_version():
+    from setuptools_scm import get_version
+    return re.sub(r'\.[a-z]+.*$', '', get_version(root=os.path.dirname(__file__),
+                                                  relative_to=__file__,
+                                                  version_scheme='python-simplified-semver',
+                                                  local_scheme='no-local-version'))
 
 setup(name='talon',
       use_scm_version=True,
