@@ -30,6 +30,8 @@ class InstallCommand(install):
                 dist.install_requires.remove(not_required)
 
 setup(name='talon',
+      use_scm_version=True,
+      setup_requires=['setuptools_scm'],
       version=re.sub(r'\.[a-z]+.*$', '', get_version(root=os.path.dirname(__file__), relative_to=__file__)),
       description=("Mailgun library "
                    "to extract message quotations and signatures."),
