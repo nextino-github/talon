@@ -1,7 +1,7 @@
 from __future__ import absolute_import
 from setuptools import setup, find_packages
 from setuptools.command.install import install
-import regex as re
+import re
 import os
 
 class InstallCommand(install):
