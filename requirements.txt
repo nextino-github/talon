@@ -6,7 +6,7 @@ joblib
 lxml>=2.3.3
 numpy
 regex>=1
-scikit-learn==0.24.2
+scikit-learn>=0.24.2
 scipy
 six>=1.10.0
 setuptools-scm>=6.3.2
