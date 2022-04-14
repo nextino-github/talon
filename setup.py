@@ -57,7 +57,7 @@ setup(name='talon',
           "regex>=1",
           "numpy",
           "scipy",
-          "scikit-learn==0.24.2", # pickled versions of classifier, else rebuild
+          "scikit-learn>=0.24.2", # pickled versions of classifier, else rebuild
           "chardet>=1.0.1",
           "cchardet>=0.3.5",
           "cssselect",
