@@ -38,7 +38,7 @@ def extract_version():
 setup(name='talon',
       use_scm_version=True,
       setup_requires=['setuptools_scm'],
-      version=extract_version,
+      version=extract_version(),
       description=("Mailgun library "
                    "to extract message quotations and signatures."),
       long_description=open("README.rst").read(),
